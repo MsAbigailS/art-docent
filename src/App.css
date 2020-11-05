@@ -9,3 +9,40 @@
   margin: 100px auto 0 auto;
   width: 90px;
 }
+
+.Calculaltor{
+  margin: 50px 50px 50px 50px;
+  width:1050px;
+  position: center;
+}
+
+.test{
+  border-bottom: 5px outset #1C6EA4;
+}
+
+.calculator-title{
+  margin: 25px 0px 0px 300px;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 35px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+}
+
+.side-logo{
+  height: 700px;
+  width: 700px;
+  margin-top: 80px;
+}
+
+.middle-page{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 30px;
+
+}

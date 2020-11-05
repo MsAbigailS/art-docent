@@ -1,27 +1,64 @@
 import React, { Component } from 'react';
+import  ResultScreen  from "./ResultScreen";
+import  KeyPadComponent  from "./KeyPadComponent";
 import './Calculator.css'
-import { Button } from '../Button'
+
+
 
 class Calculator extends Component{
 
-    addSymbol = () =>{
-        console.log("hello");
+    constructor(){
+        super();
+
+        this.state = {
+            result: ""
+        }
     }
+
+    onClick = button => {
+        if(button === "ENTER"){
+            this.calculate()
+        } else if(button === "C"){
+            this.reset()
+        } else if(button === "CE"){
+            this.backspace()
+        } else {
+            this.setState({
+                result: this.state.result + button
+            })
+        }
+    };
+    
+    calculate = () => {
+        try{
+            this.setState({
+                result: (eval(this.state.result) || "") + ""
+            })
+        } catch (e) {
+            this.setState({
+                result: "error"
+            })
+        }
+    };
+
+    reset = () => {
+        this.setState({
+            result: ""
+        })
+    };
+
+    backspace = () => {
+        this.setState({
+            result: this.state.result.slice(0, -1)
+        })
+    };
 
     render(){
         return(
-            <nav className="CalculatorFrame">
-                <input className="calculator-screen"
-                 type = "text"
-                 value = {this.props.text}/>
-
-                <div className="calculator-buttons">
-                    <Button className="plusButton" onClick={this.addSymbol()}><i className="fas fa-plus"></i></Button>
-                    <Button className="minusButton" onClick={this.addSymbol()}><i className="fas fa-minus"></i></Button>
-                    <Button className="divideButton" onClick={this.addSymbol()}><i className="fas fa-divide"></i></Button>
-                    <Button className="multiplyButton" onClick={this.addSymbol()}><i className="fas fa-times"></i></Button>
-                </div>
-            </nav>
+            <div className="calculator-body">
+                <ResultScreen result={this.state.result}/>
+                <KeyPadComponent onClick={this.onClick}/>
+            </div>
         )
     }
 }

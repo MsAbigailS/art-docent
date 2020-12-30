@@ -6,7 +6,7 @@ import UserPrompts from './front-end/userPrompts/UserPrompts';
 function App() {
   return (
     <div className="App">
-      <Homepage/>
+      {/* <Homepage/> */}
       <div>
         {/* THIS IS WHERE MY BRIEF DESCRIPTION WILL GO. */}
       </div>

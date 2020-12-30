@@ -11,7 +11,7 @@ class Painting extends Component{
 
         this.state = {
             result: "",
-            time: "10",
+            time: "50",
             urlIndex: 0,
             showViewer: false,
             startTour: false,
@@ -138,8 +138,8 @@ class Painting extends Component{
         const { showViewer } = this.state;
         return(
             <div>
-                <SlidingBar onClick={this.setMaxIndex}/>
-                <SearchButtons onClick={this.quickSearch}/>
+                {/* <SlidingBar onClick={this.setMaxIndex}/> */}
+                {/* <SearchButtons onClick={this.quickSearch}/> */}
                 <ArtSearchBar onClick={this.onClick}/>
                 <button onClick={e => this.search()}>
                     test
@@ -151,14 +151,14 @@ class Painting extends Component{
                     <>
                             <Viewer iiifUrl={this.state.artQueue[this.state.urlIndex].image}/>
                         <button
-                            onClick={e => this.nextImage()}    
-                        >
-                            Next Image
-                        </button>
-                        <button
                             onClick={e => this.prevImage()}
                         >
                             Previous Image
+                        </button>
+                        <button
+                            onClick={e => this.nextImage()}    
+                        >
+                            Next Image
                         </button>
                         The current image is named {this.state.artQueue[this.state.urlIndex].title}
 

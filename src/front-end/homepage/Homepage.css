@@ -1,0 +1,18 @@
+.home-container{
+    /* background */
+    background-image: url("https://media.overstockart.com/optimized/cache/data/product_images/VG485-1000x1000.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* sizing */
+    height: 100vh;
+    width: 100%;
+    /* font */
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 15vw;
+    /* display */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

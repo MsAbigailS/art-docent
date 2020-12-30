@@ -1,25 +1,19 @@
 import React from 'react';
-import Navbar from "./components/Navbar/Navbar";
-import Calculator from './components/Calculator/Calculator';
-import Forum from './components/Forum/Forum';
-import './App.css';
-import './components/SearchBar/AutoCompleteText';
-import SidePageLogo from './images/side-page-logo.png';
+import Painting from './components/painting/Painting';
+import Homepage from './front-end/homepage/Homepage';
+import UserPrompts from './front-end/userPrompts/UserPrompts';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <div className="test">
-        <p className="calculator-title">Enter your problem...</p>
-        <Calculator/>
+      <Homepage/>
+      <div>
+        {/* THIS IS WHERE MY BRIEF DESCRIPTION WILL GO. */}
       </div>
-      
-      <div className="middle-page">
-        <Forum className="Forum"/>
-        <img src={SidePageLogo} alt="ERROR" className="side-logo"/>
-      </div>
+      <Painting/>
+      {/* <UserPrompts/> */}
     </div>
+
   );
 }
 
